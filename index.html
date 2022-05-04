@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>QR CODE GENERATOR</title>
+    <style>
+      body {
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex justify-center h-full items-center">
+      <div class="w-full max-w-lg">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <p class="text-center text-3xl">QR CODE GENERATOR</p>
+          <p class="text-slate-500 text-center mt-3">
+            Paste a url or enter text to create QR code
+          </p>
+          <br />
+          <hr />
+          <br />
+          <div class="flex justify-center">
+            <div class="mb-3 w-full">
+              <input
+                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                type="file"
+                id="formFile"
+              />
+            </div>
+          </div>
+
+          <input
+            id="code-input"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3"
+            type="text"
+            placeholder="Enter Text Or Url...."
+          />
+          <div class="flex justify-center">
+            <button
+              id="code-button"
+              class="bg-transparent hover:bg-slate-500 textslate-500 font-semibold hover:text-white py-2 px-4 border border-slate-300 hover:border-transparent rounded mt-3 w-full"
+            >
+              GENERATE QR CODE
+            </button>
+          </div>
+          <div class="mt-3 flex justify-center">
+            <img id="code-img" src="" />
+          </div>
+          <div id="close-copy-btn">
+            <div class="mt-3 flex justify-center">
+              <p
+                id="show-result"
+                class="break-all border-dotted border-2 border-state-600 p-2 rounded"
+              ></p>
+            </div>
+            <div class="mt-3 flex justify-center">
+              <button
+                id="close"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-1"
+              >
+                Close
+              </button>
+              <button
+                data-clipboard-target="#show-result"
+                id="copy-text"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-1"
+              >
+                Copy Text
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="code.js"></script>
+  </body>
+</html>
